@@ -11,7 +11,6 @@ list_openspace = [BeCode]
 not_assigned = BeCode.assign_seats(student_list)
 BeCode.display()
 print(not_assigned)
-print()
 
 def write_file():
     output_file = "./table_assignment.txt"
