@@ -7,9 +7,9 @@ from utils.file_utils import file_utils as uti
 from utils.openspace import OpenSpace as ospace
 from utils.table import Table
 
-# Read the csv file
-student_list = uti.read_file()
+# reads the required files 
 number_of_tables, number_of_seats = uti.read_json()
+student_list = uti.read_file()
 
 #Creation of the Open Space, here we assign the amount of tables and number of seats per table. 
 BeCode = ospace(number_of_tables,number_of_seats)

@@ -34,6 +34,7 @@ class file_utils():
                     member_list.append(member)
         return member_list
     
+
     def read_json():
         # Open the JSON file
         config = './config.json'
@@ -42,8 +43,8 @@ class file_utils():
             data = json.load(file)
         number_of_tables = data["number_of_tables"]
         number_of_seats = data["number_of_seats"]
-
         
+        #checks if values are correct. 
         try:
             # Check if the variable is an integer
             number_of_tables = int(number_of_tables)
