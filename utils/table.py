@@ -57,7 +57,7 @@ class Table():
     def left_capacity(self):
         space = sum([1 for i in self.seats if i.free == True ])
         return space
-
+        
     # def has_free_spot(self):
     #     if  sum([self.seats.free]) > 0:
     #         return True
