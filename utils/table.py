@@ -1,12 +1,23 @@
 
 
 class Seat():
+    """Here is a seat, is assigned to a Table object"""
     def __init__(self, name, table_name):
-        """ This is a seat"""
-        self.name = name        #gives name to seat
+        """ This is a seat
+        
+        :name: a unique name for the seat
+        :table_name: to tell which table it belongs. (not needed yet)
+
+        variables:
+        self.free is set to Free when first made. No one sits here yet.
+        """
+        #declare attributes
+        self.name = name 
+        #student attribute is not yet filled     
         self.student = None
         self.table_name = table_name
-        self.free = True        #set seat open while first created
+        #tells us if its free, is free when created
+        self.free = True      
     
     def __str__(self):
         """Method called during a conversion of the object into a chain"""
@@ -17,20 +28,18 @@ class Seat():
         self.student = student
         self.free = False
 
-    # def remove_occupant(self):
-    #     """removes an occupant if there"""
-    #     if self.occupant is None:
-    #         print("This seat has no occupant")
-    #     else:
-    #         self.last_occupant = self.occupant
-    #         self.occupant = None
-    #         self.free = True
-    #         return self.last_occupant
-        
-
 
 class Table():
-    def __init__(self, name, seats_per_table):
+    """This is a table object. It has a name, and has seats assigned to it."""
+    def __init__(self, name: str, seats_per_table: int):
+        """Here we initialize the attributes when creating a new Table object
+        
+        input variables:
+        :name: to give it a unique name.
+        :seats_per_table: used to assign a number of Seat objects in a list.
+
+
+        """
         self.name = name
         self.seats_per_table =  seats_per_table
         self.seats = []
@@ -43,23 +52,11 @@ class Table():
         """Method called during a conversion of the object into a chain"""
         return f"This is {self.name}."
     
-    # def assign_seat(self, counter: int, people_not_seated: list, name: str):
-    #     """assigns a seat to a student if possible"""
-    #     for i in self.seats:
-    #         if i.free == True:
-    #             i.set_occupant(name)
-    #             break
-    #         else:
-    #             counter +=1
-    #             people_not_seated.append(name)
-    #             return (counter, people_not_seated)
-
     def left_capacity(self):
+        """Checks how many seats are free in this table. return the value"""
+        #create a list filled with elements of 1 for seats that are free in the Table and adds them up
         space = sum([1 for i in self.seats if i.free == True ])
         return space
         
-    # def has_free_spot(self):
-    #     if  sum([self.seats.free]) > 0:
-    #         return True
 
 
